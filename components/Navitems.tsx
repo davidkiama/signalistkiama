@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { NAVITEMS } from "@/lib/contants";
+import { NAV_ITEMS } from "@/lib/contants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,7 +14,7 @@ const Navitems = () => {
   };
   return (
     <ul className="flex flex-col sm:flex-row p-2 gap-3 sm:gap-10 font-medium">
-      {NAVITEMS.map(({ title, href }) => (
+      {NAV_ITEMS.map(({ label, href }) => (
         <li key={href}>
           <Link
             key={href}
@@ -23,7 +23,7 @@ const Navitems = () => {
               isActive(href) ? "text-gray-100" : ""
             }`}
           >
-            {title}
+            {label}
           </Link>
         </li>
       ))}
